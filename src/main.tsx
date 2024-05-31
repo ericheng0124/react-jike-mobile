@@ -1,8 +1,14 @@
-
 import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
-import './index.css'
+
+import {RouterProvider} from "react-router-dom"
+import {router} from "./router"
+
+// 测试接口
+import {fetchChannelAPI} from "@/apis/list.ts";
+fetchChannelAPI().then(res=>{
+  console.log(res.data)
+})
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <App/>
+  <RouterProvider router={router}/>
 )
